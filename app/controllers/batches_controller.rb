@@ -1,5 +1,5 @@
 class BatchesController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @batches = Batch.all
@@ -7,6 +7,7 @@ class BatchesController < ApplicationController
 
   def show
     @batch = Batch.find(params[:id])
+    @students = @batch.students.all
   end
 
   def new

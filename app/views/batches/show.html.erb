@@ -1,0 +1,8 @@
+<h1>Batch <%= @batch.name %></h1>
+<h3>Start date: <%= @batch.start_date.strftime("%e %B, %Y") %><h3>
+<h3>End date: <%= @batch.end_date.strftime("%e %B, %Y") %><h3>
+
+<h2>Students</h2>
+<% @students.each do |student| %>
+  <p> <%= link_to student.name, [student.batch, student] %> </p>
+<% end %>
