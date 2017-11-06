@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106091556) do
+
+ActiveRecord::Schema.define(version: 20171106095357) do
+
+  create_table "batches", force: :cascade do |t|
+    t.integer "name"
+    t.datetime "start_date"
+    t.datetime "ends_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "evaluations", force: :cascade do |t|
+    t.datetime "date"
+    t.string "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "student_id"
+    t.index ["student_id"], name: "index_evaluations_on_student_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "batch_id"
+    t.index ["batch_id"], name: "index_students_on_batch_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
