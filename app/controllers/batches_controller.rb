@@ -10,18 +10,18 @@ class BatchesController < ApplicationController
     @students = @batch.students.all
   end
 
-  def new
-    @batch = Batch.new
-  end
-
-  def create
-    @batch = Batch.new(batch_params)
-    if @batch.save
-      redirect_to @batch
-    else
-      render 'new'
-    end
-  end
+  # def new
+  #   @batch = Batch.new
+  # end
+  #
+  # def create
+  #   @batch = Batch.new(batch_params)
+  #   if @batch.save
+  #     redirect_to @batch
+  #   else
+  #     render 'new'
+  #   end
+  # end
 
   private
 
