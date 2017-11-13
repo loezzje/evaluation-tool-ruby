@@ -3,3 +3,5 @@
 <% @batches.each do |batch| %>
 <p><%= link_to ("Batch ##{batch.name}"), batch_path(batch.id) %></p>
 <% end %>
+
+<button type="button">Add batch</button>
