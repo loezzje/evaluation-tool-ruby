@@ -23,5 +23,5 @@ function createBatch(event) {
 }
 
 $(document).ready(function() {
-  $("form").bind('submit', createBatch);
+  $("#batchForm").bind('submit', createBatch);
 });

@@ -5,4 +5,8 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @evaluations = @student.evaluations.all
   end
+
+  def new
+    @batchId = Batch.find(params[:batch_id]).id
+  end
 end
