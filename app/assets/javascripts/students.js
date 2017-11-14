@@ -8,7 +8,7 @@ function createStudent(event) {
     type: "POST",
     url: "/api/batches/" + batchId + "/students.json",
     data: JSON.stringify({
-      student: newStudent
+      student: newStudent,
     }),
     contentType: "application/json",
     dataType: "json"

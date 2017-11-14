@@ -1,6 +1,4 @@
-class Api::BatchesController < ApplicationController
-  # before_action :authenticate_user!
-  skip_before_action :verify_authenticity_token
+class Api::BatchesController < Api::BaseController
 
   def index
     render status: 200, json: {

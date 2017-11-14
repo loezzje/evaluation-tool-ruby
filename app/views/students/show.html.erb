@@ -1,6 +1,10 @@
 <h1><%= @student.name %><h1>
 
+<%= image_tag @student.photo %>
+
 
 <% @evaluations.each do |evaluation| %>
   <p> <div class="score <%=evaluation.score %>"></div><%= evaluation.score %>, <%= evaluation.date.strftime("%e %B, %Y") %></p>
 <% end %>
+
+<%= render "evaluations/form" %>

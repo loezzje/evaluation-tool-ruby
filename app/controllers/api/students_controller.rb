@@ -1,6 +1,4 @@
-class Api::StudentsController < ApplicationController
-  # before_action :authenticate_user!
-  skip_before_action :verify_authenticity_token
+class Api::StudentsController < Api::BaseController
 
   def index
     students = Batch.find(params[:id]).students.all
@@ -12,11 +10,10 @@ class Api::StudentsController < ApplicationController
 
   def create
     student = Student.new(student_params)
-
     if student.save
       render status: 201, json: {
         message: "Student created",
-        student: student
+        student: student,
       }.to_json
     else
       render status: 422, json: {
