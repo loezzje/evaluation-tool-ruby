@@ -1,10 +1,12 @@
 function createEvaluation(event) {
   event.preventDefault();
 
+  var url = window.location.href
+  var batchId = url.split("/")[4]
+  var studentId = url.split("/")[6]
   var date = this.parentElement.children.date.value;
-  var studentId = this.parentElement.children.studentId.value;
-  var batchId = this.parentElement.children.batchId.value;
-  var newEvaluation = { date: date, score: event.target.id, student_id: studentId};
+
+  var newEvaluation = { date: date, score: event.target.id};
 
   $.ajax({
     type: "POST",

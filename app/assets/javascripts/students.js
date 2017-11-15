@@ -1,8 +1,10 @@
 function createStudent(event) {
   event.preventDefault();
 
-  var batchId = event.currentTarget.batchId.value
-  var newStudent = { name: event.currentTarget.name.value, photo: event.currentTarget.photo.value, batch_id: batchId};
+  var url = window.location.href
+  var batchId = url.split("/")[4]
+
+  var newStudent = { name: event.currentTarget.name.value, photo: event.currentTarget.photo.value };
 
   $.ajax({
     type: "POST",
