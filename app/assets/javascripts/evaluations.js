@@ -1,7 +1,6 @@
 function createEvaluation(event) {
   event.preventDefault();
 
-
   var date = this.parentElement.children.date.value;
   var studentId = this.parentElement.children.studentId.value;
   var batchId = this.parentElement.children.batchId.value;

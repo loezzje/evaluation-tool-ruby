@@ -9,7 +9,7 @@ class Api::EvaluationsController < Api::BaseController
 
 
   def create
-    evaluation = Evaluation.new(evaluation_params)
+    evaluation = Evaluation.new(evaluation_params.merge(student_id: params[:student_id]))
     if evaluation.save
       render status: 201, json: {
         message: "Evaluation created",
