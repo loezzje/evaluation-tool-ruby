@@ -6,7 +6,7 @@ class Api::BatchesController < Api::BaseController
     }.to_json
   end
 
-
+  
   def show
     batch = Batch.find(params[:id])
     students = batch.students.all

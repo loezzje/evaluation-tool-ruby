@@ -1,3 +1,38 @@
 // Place all the styles related to the Batches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.student-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.score-batch {
+  height: 40px;
+  width: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.student-image {
+  height: 150px;
+  width: 100%;
+  border-color: black;
+  border: 50px;
+}
+
+.student-name {
+  margin: 10px;
+}
+
+.student-card {
+  background-color: #bfd2ef;
+  width: calc(100%/3 - 40px);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.start-date, .end-date {
+  text-align: left;
+}
