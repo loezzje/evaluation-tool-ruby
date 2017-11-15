@@ -6,6 +6,7 @@ class Batch < ApplicationRecord
     random = rand(100)
     students = self.students
     colorGroup = students.select do |student|
+      if student.evaluations[0]
         if random <= 17
           student.evaluations[-1].score == 'green'
         elsif random > 17 && random <= 50
@@ -13,8 +14,11 @@ class Batch < ApplicationRecord
         elsif random > 50
           student.evaluations[-1].score == 'red'
         end
+      end
     end
-    return colorGroup.sample
-
+    noEvaluationGroup = students.select do |student|
+      !student.evaluations[0]
+    end
+    return (colorGroup + noEvaluationGroup).sample
   end
 end

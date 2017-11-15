@@ -9,7 +9,7 @@ class Api::StudentsController < Api::BaseController
 
 
   def create
-    student = Student.new(student_params)
+    student = Student.new(student_params.merge(batch_id: params[:batch_id]))
     if student.save
       render status: 201, json: {
         message: "Student created",
