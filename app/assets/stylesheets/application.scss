@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   font-family: 'Catamaran', sans-serif;
+ }
+
+ a:link, a:visited {
+   color: #45494f;
+   text-decoration: none;
+ }
+ a:hover {
+   color: #2a3cc1;
+ }
+
+ // .header-container {
+ //   flex: 1;
+ //   display: flex;
+ //   flex-wrap: wrap;
+ // }
+
+ .heading {
+   font-size: 400%;
+   font-style: bold;
+   text-align: left;
+ }
+
+ .red {
+   background-color: #ba1616;
+ }
+
+ .orange {
+   background-color: #e28204;
+ }
+
+ .green {
+   background-color: #258e12;
+ }
+
+ .no-score {
+   background-color: #656e7c;
+ }

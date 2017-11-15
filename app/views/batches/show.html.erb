@@ -1,11 +1,19 @@
-<h1>Batch <%= @batch.name %></h1>
-<h3>Start date: <%= @batch.start_date.strftime("%e %B, %Y") %><h3>
-<h3>End date: <%= @batch.end_date.strftime("%e %B, %Y") %><h3>
+<div class="header-container">
+  <div class="heading">Batch <%= @batch.name %></div>
+  <div class="start-date">Start date: <%= @batch.start_date.strftime("%e %B, %Y") %></div>
+  <div class="end-date">End date: <%= @batch.end_date.strftime("%e %B, %Y") %></div>
+</div>
 
-<h2>Students</h2>
-<% @students.each do |student| %>
-  <p> <%= link_to student.name, [student.batch, student] %> </p>
-<% end %>
+<div class="student-container">
+  <% @students.each do |student| %>
+  <div class="student-card">
+    <h3 class="student-name"><%= link_to student.name, [student.batch, student] %> </h2>
+    <img class="student-image" src="<%= student.photo %>">
+    <div class="score-batch <%= student.evaluations[-1] ? student.evaluations[-1].score : "no-score" %>"></div>
+  </div>
+  <% end %>
+</div>
 
-<%= link_to "New student", new_batch_student_path(@batch) %>
-<%= link_to "get random student", batch_student_path(@batch, @randomStudent)%>
+<%= link_to "New student", new_batch_student_path(@batch) %></br>
+
+<%= link_to "Get random student", batch_student_path(@batch, @randomStudent)%>
