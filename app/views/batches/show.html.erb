@@ -4,6 +4,23 @@
   <div class="end-date">End date: <%= @batch.end_date.strftime("%e %B, %Y") %></div>
 </div>
 
+<div class="overall-score">
+
+
+  <% @greenScores.times do %>
+  <div class="green scores"></div>
+  <% end %> </br>
+  <% @orangeScores.times do %>
+  <div class="orange scores"></div>
+  <% end %></br>
+  <% @redScores.times do %>
+  <div class="red scores"></div>
+  <% end %></br>
+  <% @noScores.times do %>
+  <div class="no-score scores"></div>
+  <% end %></br>
+</div>
+
 <div class="student-container">
   <% @students.each do |student| %>
   <div class="student-card">
@@ -14,6 +31,6 @@
   <% end %>
 </div>
 
-<%= link_to "New student", new_batch_student_path(@batch) %></br>
+<div><%= link_to "New student", new_batch_student_path(@batch) %></div></br>
 
 <%= link_to "Get random student", batch_student_path(@batch, @randomStudent)%>
