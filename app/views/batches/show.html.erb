@@ -5,20 +5,26 @@
 </div>
 
 <div class="overall-score">
-
-
+  <% if @greenScores != 0 %>
   <% @greenScores.times do %>
   <div class="green scores"></div>
-  <% end %> </br>
+  <% end %></br>
+  <% end %>
+  <% if @orangeScores != 0 %>
   <% @orangeScores.times do %>
   <div class="orange scores"></div>
   <% end %></br>
+  <% end %>
+  <% if @redScores != 0 %>
   <% @redScores.times do %>
   <div class="red scores"></div>
   <% end %></br>
+  <% end %>
+  <% if @noScores != 0 %>
   <% @noScores.times do %>
   <div class="no-score scores"></div>
   <% end %></br>
+  <% end %>
 </div>
 
 <div class="student-container">
@@ -31,6 +37,7 @@
   <% end %>
 </div>
 
-<div><%= link_to "New student", new_batch_student_path(@batch) %></div></br>
-
+<%= link_to "New student", new_batch_student_path(@batch) %></br>
+<% if @randomStudent %>
 <%= link_to "Get random student", batch_student_path(@batch, @randomStudent)%>
+<% end %>
