@@ -14,8 +14,6 @@ class BatchesController < ApplicationController
     @orangeScores = @batch.get_number_of_orange_scores
     @redScores = @batch.get_number_of_red_scores
     @noScores = @batch.get_number_of_no_scores
-
-
   end
 
   private

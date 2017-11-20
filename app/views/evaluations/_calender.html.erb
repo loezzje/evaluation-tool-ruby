@@ -1,0 +1,42 @@
+
+
+<div class="calender december 2017">
+  <% @weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+  <% @weekdays.each do |day| %>
+    <div class="day weekday <%= day %>"><%= day %></div>
+  <% end %>
+
+  <% counter = 1 %>
+  <% dayCounter = 1 %>
+  <% while counter <= 42 %>
+    <% while dayCounter <= Time.days_in_month(2, 2017) %>
+    <% currentDay = Time.new(2017, 2, dayCounter) %>
+      <% if dayCounter == 1 && dayCounter <= 31 %>
+        <% @weekdays.each do |day| %>
+          <% if currentDay.strftime("%A") == day  %>
+            <div class="day">
+              <%= dayCounter %>
+            </div>
+            <% break %>
+          <% else %>
+            <div class="day"></div>
+            <% counter += 1 %>
+            <% next %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <div class="day">
+          <%= dayCounter %>
+        </div>
+      <% end %>
+      <% dayCounter += 1 %>
+      <% counter += 1 %>
+    <% end %>
+    <% if counter == 36 && dayCounter > Time.days_in_month(2, 2017) %>
+      <% break %>
+    <% else %>
+      <div class="day"></div>
+      <% counter += 1 %>
+    <% end %>
+  <% end %>
+</div>

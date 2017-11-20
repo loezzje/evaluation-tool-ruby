@@ -4,7 +4,9 @@
 
 
 <% @evaluations.each do |evaluation| %>
-  <p> <div class="score <%=evaluation.score %>"></div><%= evaluation.score %>, <%= evaluation.date.strftime("%e %B, %Y") %></p>
+  <p> <div class="score <%=evaluation.score %>"></div><%= evaluation.score %>, <%= evaluation.date.strftime("%e %B, %Y") %> <%= evaluation.date.monday? ? "yes" : "no" %></p>
 <% end %>
+
+<%= render "evaluations/calender" %>
 
 <%= render "evaluations/form" %>
