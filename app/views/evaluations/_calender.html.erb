@@ -14,22 +14,22 @@
 
   <% while counter <= 42 %>
     <% while dayCounter <= Time.days_in_month(month, year) %>
-    <% currentDay = Time.new(year, month, dayCounter) %>
+    <% currentDay = Date.new(year, month, dayCounter) %>
       <% if dayCounter == 1 && dayCounter <= 31 %>
         <% @weekdays.each do |day| %>
           <% if currentDay.strftime("%A") == day  %>
-            <div class="day">
+            <div class="day <%= @evaluations.any? { |evaluation| evaluation.date == currentDay } ? (@evaluations.select {|e| e.date == currentDay })[0].score : "" %>">
               <%= dayCounter %>
             </div>
             <% break %>
           <% else %>
-            <div class="day"></div>
+            <div class="day <%= @evaluations.any? { |evaluation| evaluation.date == currentDay } ? (@evaluations.select {|e| e.date == currentDay })[0].score : "" %>"></div>
             <% counter += 1 %>
             <% next %>
           <% end %>
         <% end %>
       <% else %>
-        <div class="day">
+        <div class="day <%= @evaluations.any? { |evaluation| evaluation.date == currentDay } ? (@evaluations.select {|e| e.date == currentDay })[0].score : "" %>">
           <%= dayCounter %>
         </div>
       <% end %>

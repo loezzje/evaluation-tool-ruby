@@ -25,24 +25,20 @@ class Student < ApplicationRecord
 
   def set_year_one
     start_date = self.batch.start_date
-    puts start_date.year
     return start_date.year
 
   end
 
   def set_year_two
     if self.set_month_one == 12
-      puts self.set_year_three
       return self.set_year_three
     else
-      puts self.set_year_one
       return self.set_year_one
     end
   end
 
   def set_year_three
     end_date = self.batch.end_date
-    puts end_date.year
     return end_date.year
   end
 
