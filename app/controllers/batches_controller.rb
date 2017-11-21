@@ -9,7 +9,6 @@ class BatchesController < ApplicationController
     @batch = Batch.find(params[:id])
     @students = @batch.students.all
     @randomStudent = @batch.set_random_student
-
     @greenScores = @batch.get_number_of_green_scores
     @orangeScores = @batch.get_number_of_orange_scores
     @redScores = @batch.get_number_of_red_scores

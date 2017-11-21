@@ -7,6 +7,9 @@
   <p> <div class="score <%=evaluation.score %>"></div><%= evaluation.score %>, <%= evaluation.date.strftime("%e %B, %Y") %> <%= evaluation.date.monday? ? "yes" : "no" %></p>
 <% end %>
 
-<%= render "evaluations/calender" %>
+</br>
+<%= render "evaluations/calender", month: @month1, year: @year1 %>
+<%= @month2 ?  (render "evaluations/calender", month: @month2, year: @year2) : "" %>
+<%= render "evaluations/calender", month: @month3, year: @year3 %>
 
 <%= render "evaluations/form" %>
