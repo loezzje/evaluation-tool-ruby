@@ -23,8 +23,16 @@ function createEvaluation(event) {
   })
   .fail(function(error) {
     console.log("error", error);
+
+    error_message = "Date: " + error.responseJSON.errors.date[0];
+    showError(error_message)
   });
 };
+
+function showError(message) {
+  alert(message)
+}
+
 
 
 $(document).ready(function() {

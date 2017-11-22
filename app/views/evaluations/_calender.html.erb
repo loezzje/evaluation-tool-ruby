@@ -23,7 +23,7 @@
             </div>
             <% break %>
           <% else %>
-            <div class="day <%= @evaluations.any? { |evaluation| evaluation.date == currentDay } ? (@evaluations.select {|e| e.date == currentDay })[0].score : "" %>"></div>
+            <div class="day "></div>
             <% counter += 1 %>
             <% next %>
           <% end %>

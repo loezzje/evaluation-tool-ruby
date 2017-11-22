@@ -1,12 +1,6 @@
 <h1><%= @student.name %><h1>
 
 <%= image_tag @student.photo %>
-
-
-<% @evaluations.each do |evaluation| %>
-  <p> <div class="score <%=evaluation.score %>"></div><%= evaluation.score %>, <%= evaluation.date.strftime("%e %B, %Y") %> <%= evaluation.date.monday? ? "yes" : "no" %></p>
-<% end %>
-
 </br>
 <%= render "evaluations/calender", month: @month1, year: @year1 %>
 <%= @month2 ?  (render "evaluations/calender", month: @month2, year: @year2) : "" %>
