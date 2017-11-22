@@ -42,9 +42,4 @@ class Student < ApplicationRecord
     return end_date.year
   end
 
-
-
-
-
-
 end
